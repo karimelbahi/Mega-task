@@ -3,15 +3,15 @@
 ## Techniques
 
 ### Kotlin
-## Clean architecture
-## MVVM (Model,View,ViewModel)
-## Dagger with Hilt
-## Android view model
-## Data Binding
-## Kotlin Flow
-## Coroutines
-## Lifecycle
-## LiveData
-## List Adapter
-## Image loading with picasso
-## Navigation component with Safe Args
+### Clean architecture
+### MVVM (Model,View,ViewModel)
+### Dagger with Hilt
+### Android view model
+### Data Binding
+### Kotlin Flow
+### Coroutines
+### Lifecycle
+### LiveData
+### List Adapter
+### Image loading with picasso
+### Navigation component with Safe Args
