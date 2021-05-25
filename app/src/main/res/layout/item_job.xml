@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.karim.task.data.entity.JobsItem" />
+
+        <variable
+            name="job"
+            type="JobsItem" />
+
+        <import type="com.karim.task.presentation.base.BaseSimpleBindingAdapter.OnItemClickListener" />
+
+        <variable
+            name="onItemClickListener"
+            type="OnItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> onItemClickListener.onItemClicked(job)}"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/logo_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circleImageView" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{job.company}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/fav_img"
+                app:layout_constraintStart_toEndOf="@+id/logo_img"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Supporters of the Democratic candidate jon Ossoff after his..." />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{job.title}"
+                app:layout_constraintEnd_toStartOf="@+id/fav_img"
+                app:layout_constraintStart_toEndOf="@+id/logo_img"
+                app:layout_constraintTop_toBottomOf="@+id/name_tv"
+                tools:text="By DAVID LEONHARDT and STUART A." />
+
+
+            <ImageView
+                android:id="@+id/fav_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/not_star"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="@{()-> onItemClickListener.onSaveItemClicked(job)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

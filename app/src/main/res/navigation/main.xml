@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.karim.task.presentation.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_jobsListFragment"
+            app:destination="@id/jobsListFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobsListFragment"
+        android:name="com.karim.task.presentation.ui.jobs.JobsListFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts_list">
+
+
+        <action
+            android:id="@+id/action_jobsListFragment_to_jobsDetailsFragment"
+            app:destination="@id/jobsDetailsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/jobsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobsDetailsFragment"
+        android:name="com.karim.task.presentation.ui.jobsDetails.JobsDetailsFragment"
+        android:label="MostPopularDetails"
+        tools:layout="@layout/fragment_post_list_details">
+        <argument
+            android:name="postId"
+            app:argType="com.karim.task.data.entity.JobsItem" />
+    </fragment>
+
+
+</navigation>
