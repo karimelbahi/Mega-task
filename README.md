@@ -15,3 +15,5 @@ Mega andriod task to explain how to build solid, clean architected and easy to m
 ### List Adapter
 ### Image loading with picasso
 ### Navigation component with Safe Args
+
+![Screenshot_1621905046](https://user-images.githubusercontent.com/31477441/119425869-76799680-bd08-11eb-8be8-b30b0b5034ed.png)
